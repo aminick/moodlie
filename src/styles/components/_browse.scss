@@ -1,0 +1,65 @@
+.tab-menu {
+  display: flex;
+}
+
+.tab-menu__item + .tab-menu__item {
+  margin-left: 1.5rem;
+}
+
+.tab-menu__item-name {
+  cursor: pointer;
+  color: $mid-grey;
+
+  &.active {
+    color: $text-color;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tracklist {
+  margin-top: 1.2em;
+
+  .tracklist__row {
+    display: flex;
+    flex-direction: row;
+    padding: 1em 0.7em;
+    margin-left: -0.7em;
+    margin-right: -0.7em;
+    border-radius: 0.2em;
+
+    &:hover {
+      background-color: adjust-color($light-grey, $alpha: 0.5);
+    }
+  }
+
+  .tracklist__col.name {
+    overflow: hidden;
+  }
+
+  .tracklist__name,
+  .tracklist__artist {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .tracklist__name {
+    color: $text-color;
+    font-size: large;
+    font-weight: 500;
+  }
+
+  .tracklist__artist {
+    color: $dark-grey;
+    font-size: medium;
+  }
+
+  .duration {
+    margin-left: auto;
+  }
+}

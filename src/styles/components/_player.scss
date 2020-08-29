@@ -1,0 +1,136 @@
+// Player layout styles
+.player {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 90px 41px 77px rgba(0, 0, 0, 0.75);
+
+  .player__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .player__col {
+      flex-basis: 100%;
+      flex-grow: 1;
+
+      &.left,
+      &.right {
+        flex-basis: 50%;
+      }
+
+      &.left {
+        min-width: 0;
+      }
+
+      &.center {
+        margin: 0 1rem;
+      }
+    }
+  }
+}
+
+// Track info styles
+.player__track-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .cover-art-container {
+    height: 50px;
+    width: 50px;
+    flex-shrink: 0;
+
+    .cover-art {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  .track-meta {
+    overflow: hidden;
+    margin-left: 1rem;
+
+    .track-name,
+    .artist-name {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .artist-name {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// Player control styles
+.player-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__control-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .control-button__wrapper {
+      margin: 0 0.5rem;
+
+      .control-button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  &__progress-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .progress-bar {
+      &__wrapper {
+        flex-basis: 100%;
+        position: relative;
+        margin: 0 1rem;
+      }
+
+      &__progress {
+        height: 0.25rem;
+        background-color: $light-grey;
+      }
+
+      &__knob {
+        position: absolute;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 1rem;
+        border: 1px solid $mid-grey;
+        transform: translateY(-0.625rem) translateX(-0.5rem);
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
